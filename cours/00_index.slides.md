@@ -9,5 +9,5 @@ contributors:
 
 # Index
 
-- [Introduction](./cours/01_introduction.slides.html)
-- [Bases](./cours/02_bases.slides.html)
+- [Introduction](01_introduction.slides.html)
+- [Bases](02_bases.slides.html)
