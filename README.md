@@ -5,13 +5,58 @@
 
 ## Description et objectifs 🎯
 
-<!--- Décrire le cours en quelques lignes -->
+Ce cours est destiné aux débutants en programmation orientée objet.
+Nous aborderons les différents concepts, les bonnes pratiques de développement ainsi que les outils.
 
 ## Plan de cours 🗺️
 
-<!--- 
-- [ ] Chapitre
--->
+
+- [x] [Introduction](./cours/00_introduction.slides.md)
+    - Qu'est-ce que la programmation orientée objet ?
+    - Pourquoi utiliser la POO ?
+    - Introduction aux piliers de la POO
+    - Présentation générale de Java
+    - Installation de l'environnement de développement
+- [ ] [Les bases](./cours/01_bases.slides.md)
+    - Les variables
+    - Les opérateurs
+    - Les conditions
+    - Les boucles
+    - Les tableaux
+    - Les fonctions
+- [ ] [Encapsulation](./cours/02_encapsulation.slides.md)
+    - Définition
+    - Les accesseurs
+    - Les mutateurs
+    - Les constructeurs
+    - Les attributs
+- [ ] [Héritage](./cours/03_heritage.slides.md)
+    - Définition
+    - Les Superclasses
+    - Les Sous-classes
+- [ ] [Abstraction](./cours/04_abstraction.slides.md)
+    - Définition
+    - Les classes concrêtes
+    - Les classes abstraites
+    - Les interfaces
+- [ ] [Polymorphisme](./cours/05_polymorphisme.slides.md)
+    - Définition
+    - Utilisation
+    - Override
+    - Overload
+- [ ] [Exceptions](./cours/06_exceptions.slides.md)
+    - Définition
+    - Arborescence
+    - Utilisation
+- [ ] [Lambda](./cours/07_lambda.slides.md)
+    - Définition
+    - Utilisation
+- [ ] [Threads](./cours/08_threads.slides.md)
+    - Définition
+    - Utilisation
+- [ ] [Généricité](./cours/10_genericite.slides.md)
+    - Définition
+    - Utilisation
 
 ## Suivre ce cours 📚
 
