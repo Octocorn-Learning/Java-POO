@@ -1,12 +1,20 @@
-# Nom du cours
+> ⚠️ Ce cours est en cours de rédaction. Seuls les chapitres marqués d'une coche sont disponibles. ⚠️  
+> Le cours, la structure et les exercices sont susceptibles d'évoluer.
+
+# Java - Programmation Orientée Objet
 
 > Plus j'apprends, plus je réalise que je ne sais pas.  
 > *Albert Einstein*
 
 ## Description et objectifs 🎯
 
-Ce cours est destiné aux débutants en programmation orientée objet.
+Ce cours est destiné aux débutants en programmation orientée objet ayant déjà des bases en programmation fonctionnelle.
 Nous aborderons les différents concepts, les bonnes pratiques de développement ainsi que les outils.
+
+Nous commencerons par aborder la syntaxe java, puis nous verrons certains usages plus poussés du langage.
+Nous aborderons ensuite la POO en tant que telle en commençant par les piliers.
+
+> Si vous connaissez déjà la syntaxe Java et souhaitez passer directement à la POO, vous pouvez vous rendre directement au chapitre sur [l'encapsulation](./cours/03_encapsulation.slides.md).
 
 ## Plan de cours 🗺️
 
@@ -29,22 +37,22 @@ Nous aborderons les différents concepts, les bonnes pratiques de développement
     - Lambda
     - Threads
     - Généricité
-- [ ] [Encapsulation](./cours/02_encapsulation.slides.md)
+- [ ] [Encapsulation](./cours/03_encapsulation.slides.md)
     - Définition
     - Les accesseurs
     - Les mutateurs
     - Les constructeurs
     - Les attributs
-- [ ] [Héritage](./cours/03_heritage.slides.md)
+- [ ] [Héritage](./cours/04_heritage.slides.md)
     - Définition
     - Les Superclasses
     - Les Sous-classes
-- [ ] [Abstraction](./cours/04_abstraction.slides.md)
+- [ ] [Abstraction](./cours/05_abstraction.slides.md)
     - Définition
     - Les classes concrêtes
     - Les classes abstraites
     - Les interfaces
-- [ ] [Polymorphisme](./cours/05_polymorphisme.slides.md)
+- [ ] [Polymorphisme](./cours/06_polymorphisme.slides.md)
     - Définition
     - Utilisation
     - Override
