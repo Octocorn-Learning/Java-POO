@@ -1098,15 +1098,230 @@ public class AnimalDeCompagnie {
 ```
 
 > `import` permet d'importer un package
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Exceptions
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
 </script></section><section data-markdown><script type="text/template">
-# Demonstration
-</script></section></section><section  data-markdown><script type="text/template">
+## Exceptions
+### Définition
+
+- Une exception est une **erreur** qui se produit lors de l'exécution d'un programme
+- Elle peut être **gérée** ou **non gérée**
+- Elle interrompt l'exécution du programme
+</script></section><section data-markdown><script type="text/template">
+## Exceptions
+### Gérée
+
+- Une exception gérée est une exception qui est **attrapée** par le programme
+- Elle est **gérée** par le programme
+- Elle n'interrompt pas l'exécution du programme
+- On peut définir un comportement à adopter en cas d'exception
+
+```java
+try {
+    // Si ce code throw une exception...
+} catch (Exception e) {
+    // Elle est attrappée ici ! On peut définir un comportement
+}
+```
+
+</script></section><section data-markdown><script type="text/template">
+## Exceptions
+### Non gérée
+
+- Une exception non gérée est une exception qui n'est pas **attrapée** par le programme
+- Elle n'est pas **gérée** par le programme
+- Elle interrompt l'exécution du programme
+
+```java
+public void lancerException() {
+    throw new Exception("Erreur !");
+}
+```
+
+> `throw` permet de lancer une exception
+</script></section><section data-markdown><script type="text/template">
+## Exceptions
+### Types
+
+- Il existe de nombreux types d'exceptions
+- Elles sont regroupées dans des **packages**
+- Elles sont souvent **héritées** d'une classe `Exception`
+
+```java
+import java.io.IOException;
+
+public void lancerException() throws IOException {
+    throw new IOException("Erreur !");
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Exceptions
+### Types
+
+- `ArrayIndexOutOfBoundsException` : Index de tableau invalide
+- `ClassNotFoundException` : Classe non trouvée
+- `NullPointerException` : Pointeur null
+- `IllegalArgumentException` : Paramètre invalide 
+- `IOException` : Entrée / Sortie
+- `NumberFormatException` : Format de nombre invalide
+</script></section><section data-markdown><script type="text/template">
+## Exceptions
+### Créer une exception
+
+- Il est possible de créer ses propres exceptions
+- Il faut pour cela créer une classe qui hérite de `Exception`
+
+```java
+public class MonException extends Exception {
+    public MonException(String message) {
+        super(message);
+    }
+}
+```
+
+> `super` permet d'appeler le constructeur de la classe parente
+</script></section><section data-markdown><script type="text/template">
+## Exceptions
+### Lancer une exception
+
+- Il est possible de lancer une exception
+- Il faut pour cela utiliser le mot clé `throw` suivi de l'exception
+
+```java
+public void lancerException() throws MonException {
+    throw new MonException("Erreur !");
+}
+```
+
+> `throws` permet de déclarer une exception
+</script></section><section data-markdown><script type="text/template">
+## Exceptions
+### Bonnes pratiques
+
+- Créez si nécessaire vos propres exceptions !
+- Une exception doit être **documentée** avec de la **JavaDoc**
+- Elle doit être **gérée** si elle peut l'être
+- Elles sont suffixées par `Exception`
+
+> Les bonnes pratiques de nommage s'appliquent aussi aux exceptions !
+</script></section><section data-markdown><script type="text/template">
+## Exceptions
+### Démonstration
+
+Créons une exception personnalisée !
+</script></section></section><section ><section data-markdown><script type="text/template">
+# HashMap
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## HashMap
+### Définition
+
+- Structure de données faisant parie du Framework de Collections
+- Dans le package `java.util`
+- Sert à stocker des données sous forme de clé / valeur
+- C'est une implémentation de l'interface `Map`
+</script></section><section data-markdown><script type="text/template">
+## HashMap
+### Constitution
+
+- Une `HashMap` est constituée de **paires** clé / valeur
+- La clé est unique
+- La valeur peut être dupliquée
+
+```json
+"index1": {
+    "clé1": "valeur1",
+    "clé2": "valeur2",
+    "clé3": "valeur3"
+},
+"index2": {
+    "clé1": "valeur1",
+    "clé2": "valeur2",
+    "clé3": "valeur3"
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## HashMap
+### Avantages
+
+- Les clefs sont uniques et servent d'index
+- Les recherches sont très rapides
+- Les données sont triées par ordre d'insertion
+</script></section><section data-markdown><script type="text/template">
+## HashMap
+### Syntaxe
+
+Pour créer une `HashMap` :
+
+```java
+Map<String, String> map = new HashMap<>();
+```
+</script></section><section data-markdown><script type="text/template">
+## HashMap
+### Les méthodes
+
+- `put()` : Ajouter une valeur
+- `get()` : Récupérer une valeur
+- `remove()` : Supprimer une valeur
+- `containsKey()` : Vérifier si une clé existe
+- `containsValue()` : Vérifier si une valeur existe
+- `keySet()` : Récupérer les clés
+- `values()` : Récupérer les valeurs
+- `entrySet()` : Récupérer les paires clé / valeur
+</script></section><section data-markdown><script type="text/template">
+## HashMap
+### Exemple
+
+```java
+Map<String, String> map = new HashMap<>();
+map.put("cle1", "valeur1");
+map.get("cle1"); // valeur1
+map.remove("cle1");
+map.containsKey("cle1"); // false
+map.containsValue("valeur1"); // false
+map.keySet(); // [cle1]
+map.values(); // [valeur1]
+map.entrySet(); // [cle1=valeur1]
+```
+</script></section><section data-markdown><script type="text/template">
+## HashMap
+### Parcourir
+
+- Il est possible de parcourir une `HashMap` avec une boucle `for-each`
+- Il faut pour cela utiliser la méthode `entrySet()`
+
+```java
+Map<String, String> map = new HashMap<>();
+for (Map.Entry<String, String> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + " : " + entry.getValue());
+}
+```
+
+> `entrySet()` permet de récupérer les paires clé / valeur
+</script></section><section data-markdown><script type="text/template">
+## HashMap
+### Démonstration !
+
+Gestion d'élèves avec une `HashMap` !
+
+<aside class="notes"><p><code>./Espace Formateur/demos/hashmap.md</code></p>
+</aside></script></section></section><section  data-markdown><script type="text/template">
 # A vous de jouer !
 
 Réalisez le TP 1 !
 
 <aside class="notes"><p><code>exercices/tp1/tp1.coq.md</code></p>
-</aside></script></section></div>
+</aside></script></section><section  data-markdown><script type="text/template">
+# La suite !
+
+- [Index](index.html)</script></section></div>
     </div>
 
     <script src="./dist/reveal.js"></script>
