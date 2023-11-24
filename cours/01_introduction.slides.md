@@ -11,7 +11,9 @@ sources:
 
 # POO
 
-![Logo Java](./assets/java.png) <!-- .element width="20%" -->
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
 
 ----
 
@@ -160,7 +162,9 @@ Nous aborderons ces concepts en détail dans les prochains chapitres !
 
 # Java POO - Introduction
 
-![Logo Java](./assets/java.png) <!-- .element width="20%" -->
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
 
 ----
 

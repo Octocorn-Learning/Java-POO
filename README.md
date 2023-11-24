@@ -10,20 +10,25 @@ Nous aborderons les différents concepts, les bonnes pratiques de développement
 
 ## Plan de cours 🗺️
 
-
 - [x] [Introduction](./cours/00_introduction.slides.md)
     - Qu'est-ce que la programmation orientée objet ?
     - Pourquoi utiliser la POO ?
     - Introduction aux piliers de la POO
     - Présentation générale de Java
     - Installation de l'environnement de développement
-- [ ] [Les bases](./cours/01_bases.slides.md)
+- [x] [Les bases](./cours/01_bases.slides.md)
     - Les variables
     - Les opérateurs
     - Les conditions
     - Les boucles
     - Les tableaux
     - Les fonctions
+    - Classes et objets
+- [ ] [Aller plus loin](./cours/02_avance.slides.md)
+    - Exceptions
+    - Lambda
+    - Threads
+    - Généricité
 - [ ] [Encapsulation](./cours/02_encapsulation.slides.md)
     - Définition
     - Les accesseurs
@@ -44,19 +49,6 @@ Nous aborderons les différents concepts, les bonnes pratiques de développement
     - Utilisation
     - Override
     - Overload
-- [ ] [Exceptions](./cours/06_exceptions.slides.md)
-    - Définition
-    - Arborescence
-    - Utilisation
-- [ ] [Lambda](./cours/07_lambda.slides.md)
-    - Définition
-    - Utilisation
-- [ ] [Threads](./cours/08_threads.slides.md)
-    - Définition
-    - Utilisation
-- [ ] [Généricité](./cours/10_genericite.slides.md)
-    - Définition
-    - Utilisation
 
 ## Suivre ce cours 📚
 
@@ -74,7 +66,8 @@ Vous aurez alors accès à une animation du cours, de démonstrations et de la c
 
 Vous retrouverez les exercices dans le dossier `./exercices`.
 
-Pour chaque exercice, vous retrouverez trois niveaux de difficulté : 
+Pour chaque exercice, vous retrouverez trois niveaux de difficulté :
+
 - Coq : Version avancée de l'exercice, avec très peu d'indications
 - Poulet : Version "classique", avec quelques indices
 - Poussin : Version "guidée", avec rappels des notions importantes et indices supplémentaires
@@ -83,7 +76,8 @@ Pour chaque exercice, vous retrouverez trois niveaux de difficulté :
 
 ## Contribuer 🤝
 
-Vous pouvez contribuer à l'amélioration de ce cours en créant une *pull request* ou en remontant un problème dans la section "Issues" du dépôt.  
+Vous pouvez contribuer à l'amélioration de ce cours en créant une *pull request* ou en remontant un problème dans la
+section "Issues" du dépôt.  
 Rendez-vous sur le [guide de contribution](./CONTRIBUTING.md) pour plus d'informations !
 
 ## Soutenir 🫶
