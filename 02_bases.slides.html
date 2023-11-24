@@ -35,7 +35,1078 @@
 
 ![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
 </script></section><section data-markdown><script type="text/template">
-</script></section></section></div>
+## Java
+### Hello World
+
+Créez un nouveau projet Java **IntelliJ** :
+- File > New > Project > New Project
+- Sélectionnez l'archétype **Maven**
+- Dans les options avancées, ajoutez votre nom de domaine inversé (ex: `fr.octocorn`)
+- Laissez coché "Generate Sample Code"
+</script></section><section data-markdown><script type="text/template">
+## Java
+### Hello World
+
+Le projet a automatiquement été créé avec la structure suivante :
+
+```
+└───src # Racine du code source
+    ├───main # Code source principal
+    │   ├───java # Code source Java
+    │   │   └───fr # Dossier contenant le nom de domaine inversé
+    │   │       └───octocorn # On parle de package
+    │   │               Main.java # Fichier contenant la classe Main
+    │   │
+    │   └───resources # Code source non Java
+    └───test # Code source de tests
+```
+</script></section><section data-markdown><script type="text/template">
+## Java
+### Hello World
+
+La classe `Main` est la classe principale du programme. 
+Elle contient la méthode `main` qui est la méthode principale du programme.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
+```
+
+> `System.out.println` permet d'afficher du texte dans la console
+</script></section><section data-markdown><script type="text/template">
+## Java
+### Hello World
+
+Pour exécuter le programme en ligne de commande :
+
+```shell
+java src/main/java/fr/octocorn/Main.java
+```
+
+> Vous pouvez aussi utiliser le bouton "Run" dans IntelliJ !
+</script></section><section data-markdown><script type="text/template">
+## Java
+### JavaDoc
+
+> Quelle est la différence entre un commentaire et une documentation ?
+</script></section><section data-markdown><script type="text/template">
+## Java
+### JavaDoc
+
+La documentation est un commentaire **structuré** et **formaté**.
+
+```java
+/**
+ * Cette classe représente une personne
+ */
+public class Personne {
+    // Code ...
+}
+```
+
+> Elle peut être lue depuis n'importe où en passant la souris sur le code !
+</script></section><section data-markdown><script type="text/template">
+## Java
+### JavaDoc
+
+La documentation peut être **formatée** avec des balises HTML.
+
+```java
+/**
+ * Cette classe représente une personne
+ * <p>
+ *     Une personne est caractérisée par son nom et son prénom
+ * </p>
+ */
+public class Personne {
+    // Code ...
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Java
+### Commentaire
+
+Le commentaire est un texte **libre**.
+
+```java
+// Cette classe représente une personne
+public class Personne {
+    // Code ...
+}
+```
+
+- Elle ne peut pas être formatée
+- Elle ne peut pas être lue depuis n'importe où
+</script></section><section data-markdown><script type="text/template">
+## Java
+### Commentaire
+
+Le commentaire peut être **multi-lignes**.
+
+```java
+/*
+ * Cette classe représente une personne
+ */
+public class Personne {
+    // Code ...
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Java
+### Commentaire ou doc ?
+
+- **Commentaire** : Pour expliquer le code
+- **Documentation** : Pour décrire le code
+
+> En théorie, il ne devrait pas y avoir de commentaire dans le code si le code est bien écrit !
+</script></section><section data-markdown><script type="text/template">
+## Java
+### DOCUMENTEZ !
+
+Si en théorie, un code bien écrit n'a pas besoin de documentation :
+- La documentation est **obligatoire** pour les classes et les méthodes publiques
+- La documentation est **fortement recommandée** pour les classes et les méthodes privées
+
+> Bonne pratique ! 🤓
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Variables
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Variables
+### Définition
+
+Une variable est une **zone mémoire** dans laquelle on peut stocker une **valeur**.
+
+```java
+int age = 18;
+```
+
+- `int` est le **type** de la variable
+- `age` est le **nom** de la variable
+- `18` est la **valeur** de la variable
+
+> Une variable est une **référence** vers une valeur
+</script></section><section data-markdown><script type="text/template">
+## Variables
+### Définition
+
+- Elle est stockée dans la **mémoire vive** de l'ordinateur
+- Sa taille est allouée dynamiquement en fonction de son type
+- Elle peut être modifiée à tout moment
+- Elle peut être **référencée** par son nom
+</script></section><section data-markdown><script type="text/template">
+## Variables
+### Nommage
+
+- Bien nommer ses variables est **très important**
+- Utilisez des noms **significatifs** et **compréhensibles**
+- Pas d'**acrônyme** ou d'**abréviation** (sauf si connu de tous)
+- Ils sont déclarés en **camelCase**
+
+> Vous ne codez pas pour vous, mais pour les autres !
+</script></section><section data-markdown><script type="text/template">
+## Constantes
+### Définition
+
+- Une constante est une variable dont la valeur ne peut pas être modifiée
+- Elle est déclarée avec le mot clé `final`
+
+```java
+final int AGE_LIMITE = 18;
+```
+
+> Les constantes sont déclarées en **majuscules**
+</script></section><section data-markdown><script type="text/template">
+## Variables
+### Types numériques
+
+- En java, les types sont précisés **avant** le nom de la variable
+- Il existe plusieurs types numériques :
+  - `byte` : 8 bits
+  - `short` : 16 bits
+  - `int` : 32 bits
+  - `long` : 64 bits
+  - `float` : 32 bits (virgule flottante)
+  - `double` : 64 bits (virgule flottante)
+</script></section><section data-markdown><script type="text/template">
+## Variables
+### Types booléens
+
+- `boolean` : Vrai ou faux (1 bit)
+
+```java
+boolean estVrai = true;
+boolean estFaux = false;
+```
+</script></section><section data-markdown><script type="text/template">
+## Variables
+### Types caractères
+
+- `char` : Caractère unique (16 bits)
+- `String` : Chaine de caractères (tableau de `char`)
+
+```java
+char lettre = 'a';
+String mot = "Bonjour";
+```
+
+> Les `String` se déclarent avec `""` !
+</script></section><section data-markdown><script type="text/template">
+## Variables
+### String
+
+> Pourquoi `String` et pas `string` ?
+</script></section><section data-markdown><script type="text/template">
+## Variables
+### String
+
+- `String` est une **classe** et non un **type primitif**
+- Les classes commencent par une **majuscule**
+- Il s'agit d'un tableau de `char`, livré avec des méthodes
+</script></section><section data-markdown><script type="text/template">
+## Types
+### Types primitifs VS Classes
+
+- Les types primitifs sont **plus rapides** à manipuler
+- Les classes sont **plus pratiques** à manipuler
+- Elles ajoutent des **méthodes** et des **fonctionnalités**
+
+> Les classes sont des **wrappers** des types primitifs
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Opérateurs
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Opérateurs
+### Définition
+
+Un opérateur est un **symbole** qui permet d'effectuer une **opération** sur des variables.
+
+```java
+int a = 1;
+int b = 2;
+int c = a + b;
+```
+
+- `+` est l'**opérateur d'addition**
+- `a` et `b` sont les **opérandes**
+- `c` est le **résultat** de l'opération
+</script></section><section data-markdown><script type="text/template">
+## Opérateurs
+### Opérateurs arithmétiques
+
+- `+` : Addition
+- `-` : Soustraction
+- `*` : Multiplication
+- `/` : Division
+- `%` : Modulo (reste de la division)
+
+> Les opérateurs arithmétiques ne fonctionnent qu'avec des nombres !
+</script></section><section data-markdown><script type="text/template">
+## Opérateurs
+### Opérateurs de comparaison
+
+- `==` : Egalité
+- `!=` : Différence
+- `>` : Supérieur
+- `<` : Inférieur
+- `>=` : Supérieur ou égal
+- `<=` : Inférieur ou égal
+
+> Les opérateurs de comparaison renvoient un booléen !
+</script></section><section data-markdown><script type="text/template">
+## Opérateurs
+### Opérateurs logiques
+
+- `&&` : ET (Conjonction)
+- `||` : OU (Disjonction)
+- `!` : NON (Négation)
+</script></section><section data-markdown><script type="text/template">
+## Opérateurs
+### Opérateurs d'incrémentation
+
+- `++` : Incrémentation
+- `--` : Décrémentation
+
+```java
+int a = 1;
+a++; // a = a + 1
+a--; // a = a - 1
+```
+
+> Peut être placé avant ou après la variable
+</script></section><section data-markdown><script type="text/template">
+## Opérateurs
+### Concaténation
+
+- `+` : Concaténation
+- Equivalent : Méthode `concat` de la classe `String
+
+```java
+String a = "Hello";
+String b = "World";
+String c = a + " " + b; // "Hello World"
+```
+
+> La concaténation ne fonctionne qu'avec des `String` !
+</script></section><section data-markdown><script type="text/template">
+## Opérateurs
+### Opérateurs d'affectation
+
+- `=` : Affectation
+- `+=` : Affectation avec addition
+- `-=` : Affectation avec soustraction
+- `*=` : Affectation avec multiplication
+</script></section><section data-markdown><script type="text/template">
+## Opérateurs
+### Opérateurs ternaires
+
+- `? :` : Opérateur ternaire
+- Comparable à un `if` / `else`
+
+```java
+int a = 1;
+int b = 2;
+int c = a > b ? a : b; // c = b
+```
+
+> Eviter de l'utiliser, préférer un `if` / `else` !
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Conditions et boucles
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Conditions
+### Définition
+
+Une condition est une **instruction** qui permet d'effectuer une **action** en fonction d'une **condition**.
+
+```java
+int a = 1;
+int b = 2;
+if (a > b) {
+    System.out.println("a est supérieur à b");
+} else {
+    System.out.println("a est inférieur ou égal à b");
+}
+```
+
+> `if` signifie "si" en anglais
+</script></section><section data-markdown><script type="text/template">
+## Boucles
+### for
+
+Une boucle est une **instruction** qui permet d'effectuer une **action** plusieurs fois.
+
+```java
+for (int i = 0; i < 10; i++) {
+    System.out.println(i);
+}
+```
+
+> Variable `i` : bien ou pas bien ?
+
+<aside class="notes"><p>Pas bien ! 😱</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## Boucles
+### for
+
+- Bien que très utilisé, la variable `i` n'est pas très parlante
+- Il est préférable d'utiliser une variable plus parlante
+
+```java
+for (int index = 0; index < 10; index++) {
+    System.out.println(index);
+}
+```
+
+> Ca coute rien et c'est plus clair !
+</script></section><section data-markdown><script type="text/template">
+## Boucles
+### for : les dérives
+
+- Il est possible de stocker des boucles dans des boucles
+- Les dérives connues consistent à nommer les index `i`, `j`, `k`, `l`, ...
+
+```java
+for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+        for (int k = 0; k < 10; k++) {
+            for (int l = 0; l < 10; l++) {
+                // ...
+            }
+        }
+    }
+}
+```
+
+> Résultat : un code illisible ! 😱
+</script></section><section data-markdown><script type="text/template">
+## Boucles
+### while
+
+- La boucle `while` permet de répéter une action **tant qu'une condition est vraie**
+- La condition est vérifiée **avant** l'exécution de la boucle
+
+```java
+int i = 0;
+while (i < 10) {
+    System.out.println(i);
+    i++;
+}
+```
+
+> `while` signifie "tant que" en anglais
+</script></section><section data-markdown><script type="text/template">
+## Boucles
+### do while
+
+- La boucle `do while` permet de répéter une action **tant qu'une condition est vraie**
+- La condition est vérifiée **après** l'exécution de la boucle
+
+```java
+int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i < 10);
+```
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Tableaux
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### Définition
+
+- Un tableau est une **structure de données** qui permet de stocker plusieurs valeurs.
+- Il a une taille **fixe** et **définie** à l'avance
+- Il est **indexé** à partir de 0
+
+```java
+int[] tableau = new int[10];
+```
+
+> `int[]` est le type du tableau : tableau d'entiers
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### Ajouter des éléments
+
+- Il est possible d'ajouter des éléments dans un tableau
+- Il faut pour cela utiliser l'**index** du tableau
+
+```java
+int[] tableau = new int[10];
+tableau[0] = 1;
+tableau[1] = 2;
+tableau[2] = 3;
+```
+
+> Attention à ne pas dépasser la taille du tableau !
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### Ajouter lors de la création
+
+- Il est possible d'ajouter des éléments lors de la création du tableau
+- Il faut pour cela utiliser des **accolades** et séparer les éléments par des **virgules**
+
+```java
+int[] tableau = new int[] {1, 2, 3};
+```
+
+> Sa taille sera fixée automatiquement !
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### Parcourir un tableau
+
+- Il est possible de parcourir un tableau avec une boucle
+- Il faut pour cela utiliser la **taille** du tableau
+
+```java
+int[] tableau = new int[10];
+for (int index = 0; index < tableau.length; index++) {
+    System.out.println(tableau[index]);
+}
+```
+
+> `tableau.length` permet de récupérer la taille du tableau
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### for-each
+
+- Il est possible de parcourir un tableau avec une boucle `for-each`
+- Il faut pour cela utiliser le mot clé `for` suivi du type de la variable, puis du nom de la variable, puis du tableau
+
+```java
+int[] tableau = new int[10];
+for (int element : tableau) {
+    System.out.println(element);
+}
+```
+
+> Pas de valeur = valeur par défaut du type
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### Agrandir un tableau
+
+- Il est possible d'agrandir un tableau
+- Il faut pour cela créer un nouveau tableau avec la nouvelle taille
+- Il faut ensuite copier les éléments du tableau dans le nouveau tableau
+
+```java
+int[] tableau = {1, 2, 3};
+int[] nouveauTableau = new int[20];
+for (int index = 0; index < tableau.length; index++) {
+    nouveauTableau[index] = tableau[index];
+}
+tableau = nouveauTableau;
+```
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### Tableaux multidimensionnels
+
+- Un tableau peut contenir d'autres tableaux
+- Il s'agit d'un tableau de tableaux
+
+```java
+int[][] tableau = new int[10][10];
+```
+
+> `int[][]` est le type du tableau : tableau de tableaux d'entiers
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### Tableaux multidimensionnels
+
+- On utilisera l'index pour accéder aux éléments
+- Il faut pour cela utiliser l'index du tableau, puis l'index de l'élément
+
+```java
+int[][] tableau = new int[10][10];
+tableau[0][0] = 1;
+tableau[0][1] = 2;
+tableau[0][2] = 3;
+```
+
+> Attention à ne pas dépasser la taille du tableau !
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### ArrayList
+
+- `ArrayList` est une classe qui permet de créer des tableaux dynamiques
+- Il est possible d'ajouter des éléments sans se soucier de la taille
+
+```java
+ArrayList<Integer> tableau = new ArrayList<>();
+tableau.add(1);
+```
+
+> `ArrayList` est une classe générique, il faut donc préciser le type
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### ArrayList
+
+- `ArrayList` est une implémentation de l'interface `List`
+- Il est possible de récupérer un tableau à partir d'une `List`
+
+```java
+List<Integer> liste = new ArrayList<>();
+liste.add(1);
+```
+
+```java
+Integer[] tableau = liste.toArray(new Integer[0]);
+```
+</script></section><section data-markdown><script type="text/template">
+## Integer ?!
+
+- `int` est un type primitif, `Integer` est une classe
+- Comme pour `String`, `Integer` est une classe qui permet de manipuler des `int`
+
+```java
+int a = 1;
+Integer b = 2;
+```
+
+> `Integer` est un **wrapper** de `int`
+</script></section><section data-markdown><script type="text/template">
+## Tableaux
+### ArrayList
+
+- `List` sert aussi d'interface pour le type `LinkedList`
+- `LinkedList` est une implémentation de `List` qui permet d'ajouter des éléments plus rapidement
+
+```java
+List<Integer> liste = new LinkedList<>();
+liste.add(1);
+```
+
+> `LinkedList` est une liste chaînée, elle est plus lente à parcourir
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Fonctions
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Fonctions
+### Définition
+
+Une fonction est une **sous-routine** qui permet d'effectuer une **action**.
+
+```java
+public void afficherBonjour() {
+    System.out.println("Bonjour");
+}
+```
+
+> `void` signifie "vide" en anglais
+</script></section><section data-markdown><script type="text/template">
+## Fonctions
+### Syntaxe
+
+```java
+public <type> <nom>(<paramètres>) {
+    // Code
+}
+```
+
+- `public` : Visibilité de la fonction
+- `<type>` : Type de retour de la fonction
+- `<nom>` : Nom de la fonction
+- `<paramètres>` : Paramètres de la fonction
+- `{}` : Corps de la fonction
+</script></section><section data-markdown><script type="text/template">
+## Fonctions
+### Visibilité
+
+Il existe plusieurs visibilités pour les fonctions :
+- `public` : Fonction accessible depuis n'importe où
+- `private` : Fonction accessible uniquement depuis la classe
+- `protected` : Fonction accessible depuis la classe et les classes filles
+- `package` : Fonction accessible uniquement depuis le package
+
+> Par défaut, la visibilité est `package`
+</script></section><section data-markdown><script type="text/template">
+## Fonctions
+### Type de retour
+
+- Dans tous les autres cas, la fonction retourne un type ou `void`
+- `void` : Fonction qui ne retourne rien
+
+```java
+public int addition(int a, int b) {
+    return a + b;
+}
+```
+
+> `return` permet de retourner une valeur
+</script></section><section data-markdown><script type="text/template">
+## Fonctions
+### Paramètres
+
+Les paramètres sont des variables qui permettent de passer des valeurs à la fonction.
+
+```java
+public void afficherBonjour(String nom) {
+    System.out.println("Bonjour " + nom);
+}
+```
+
+> Les paramètres sont séparés par des virgules
+</script></section><section data-markdown><script type="text/template">
+## Fonction
+### Appel
+
+Pour appeler une fonction, il faut utiliser son nom suivi des paramètres entre parenthèses.
+
+```java
+afficherBonjour("Alexandre");
+```
+
+> Les paramètres doivent correspondre aux types attendus par la fonction
+</script></section><section data-markdown><script type="text/template">
+## Fonction
+### Nomenclaure
+
+- Les fonctions doivent être nommées de manière **significative**
+- Elles doivent commencer par un **verbe** à l'infinitif
+- Elles doivent être **courtes** et **concises**
+- On utilisera le **camelCase** pour les nommer
+</script></section><section data-markdown><script type="text/template">
+## Fonction
+### Bonnes pratiques
+
+- Une fonction doit faire **une seule chose**
+- Une fonction doit faire moins de **20 lignes**
+- Idéalement, une fonction est **documentée** avec de la **JavaDoc**
+
+> Le nom de la fonction est souvent inversement proportionnel à sa taille/complexité
+</script></section><section data-markdown><script type="text/template">
+## Fonction
+### Exemple
+
+```java
+/**
+ * Affiche un message de bienvenue personnalisé
+ * @param nom Le nom de la personne
+ */
+public void afficherBonjour(String nom) {
+    System.out.println("Bonjour " + nom);
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Fonction
+### Découpage
+
+- Une fonction doit faire **une seule chose**
+- Si elle fait plus de 20 lignes, il faut la découper en plusieurs fonctions
+
+```java
+public void afficherBonjour(String nom) {
+    System.out.println("Bonjour " + nom);
+}
+```
+
+> Ici, la fonction ne fait qu'une seule chose, elle est donc bonne !
+</script></section><section data-markdown><script type="text/template">
+## Fonction
+### Découpage
+
+```java
+/**
+ * Affiche le message de bienvenue et vérifie si la personne est majeure
+ */
+public void afficherBonjourEtVerifierAge(String nom, int age) {
+    System.out.println("Bonjour " + nom);
+    if (age >= 18) {
+        System.out.println("Vous êtes majeur !");
+    } else {
+        System.out.println("Vous êtes mineur !");
+    }
+}
+```
+
+> Ici, la fonction fait deux choses, il faut la découper !
+</script></section><section data-markdown><script type="text/template">
+## Fonction
+### Découpage
+
+```java
+/**
+ * Affiche le message de bienvenue
+ */
+private void afficherBonjour(String nom) {
+    System.out.println("Bonjour " + nom);
+}
+
+/**
+ * Vérifie si la personne est majeure
+ */
+private void verifierAge(int age) {
+    if (age >= 18) {
+        System.out.println("Vous êtes majeur !");
+    } else {
+        System.out.println("Vous êtes mineur !");
+    }
+}
+
+/**
+ * Affiche le message de bienvenue et vérifie si la personne est majeure
+ */
+public void afficherBonjourEtVerifierAge(String nom, int age) {
+    afficherBonjour(nom);
+    verifierAge(age);
+}
+```
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Classes et objets
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Objets
+### Définition
+
+Un objet est une **instance** d'une **classe**.
+
+```java
+Personne Alex = new Personne();
+```
+
+- `Personne` est le **type** de l'objet
+- `Alex` est le **nom** de l'objet
+
+> `new` permet d'instancier un objet
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Définition
+
+Une classe est un **modèle** qui permet de créer des objets.
+
+```java
+public class Personne {
+    // Code
+}
+```
+
+- `public` : Visibilité de la classe
+- `class` : Mot clé pour définir une classe
+- `Personne` : Nom de la classe
+- `{}` : Corps de la classe
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Attributs
+
+Les attributs sont des variables qui permettent de stocker des valeurs dans un objet.
+
+```java
+public class Personne {
+    public String nom;
+    public int age;
+}
+```
+
+> Les attributs sont déclarés dans la classe
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Méthodes
+
+Les méthodes sont des fonctions qui permettent d'effectuer des actions sur un objet.
+
+```java
+public class Personne {
+    public String nom;
+    public int age;
+
+    public void etudier(String matiere) {
+        System.out.println(nom + " étudie " + matiere);
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Constructeur
+
+Le constructeur est une méthode qui permet d'initialiser un objet.
+
+```java
+public class Personne {
+    public String nom;
+    public int age;
+
+    public Personne(String nom, int age) {
+        this.nom = nom;
+        this.age = age;
+    }
+}
+```
+
+- Il porte le même nom que la classe
+- Appelé lors de l'instanciation
+- Permet d'initialiser les attributs
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Précisions
+
+```java
+public class Personne {
+    public String nom;
+    public int age;
+
+    public Personne(String nom, int age) {
+        this.nom = nom;
+        this.age = age;
+    }
+}
+```
+
+- `this` permet de faire référence à l'objet courant
+- `this.nom` fait référence à l'attribut `nom` de l'objet courant
+- `nom` fait référence au paramètre `nom` de la méthode
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Statique
+
+- Une classe peut être **statique**
+- Une classe statique ne peut pas être instanciée
+- Elle ne peut contenir que des méthodes statiques
+
+```java
+public static class Personne {
+    // Code
+}
+```
+
+> `static` permet de définir une classe statique
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Statique
+
+- L'objectif des classes statique est souvent de regrouper des méthodes
+- Elles sont souvent utilisées pour créer des **utilitaires**
+
+```java
+public static class Mathematiques {
+    public static int addition(int a, int b) {
+        return a + b;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Attributs statiques
+
+- Attributs qui appartiennent à la classe et non à l'objet
+- Partagés par tous les objets de la classe
+
+```java
+public class Personne {
+    public static int nombreDePersonnes = 0;
+
+    public Personne() {
+        nombreDePersonnes++;
+    }
+}
+```
+Ici, on incrémente le nombre de personnes à chaque fois qu'on instancie un objet
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Attributs `final`
+
+- `final` devant un attribut signifie qu'il est **constant**
+- Il ne peut pas être modifié après son initialisation
+- Comme une constante, qui serait initialisée dans le constructeur
+
+```java
+public class Personne {
+    public final String nom;
+
+    public Personne(String nom) {
+        this.nom = nom;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Classes par défaut
+
+- Il existe de nombreuses classes existantes en Java
+- Elles sont disponibles par défaut dans le langage mais doivent être importées
+- Elles sont regroupées dans des **packages**
+
+```java
+import java.util.ArrayList;
+```
+
+> `import` permet d'importer une classe
+</script></section><section data-markdown><script type="text/template">
+## Classes
+### Bonnes pratiques
+
+- Une classe doit être **documentée** avec de la **JavaDoc**
+- Elle est **publique** si elle est utilisée par d'autres classes
+- Une classe = un fichier !
+- Elle est nommée en **PascalCase**
+- Elle n'a qu'une seule **responsabilité**
+
+> Nous aborderons ça plus en détail dans les prochains cours !
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Packages
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Packages
+### Définition
+
+- Un package est un **dossier** qui contient des classes
+- Il permet de **regrouper** les classes par **thème**
+- Il permet de **structurer** le code
+
+```java
+package fr.octocorn;
+
+public class Personne {
+    // Code
+}
+```
+
+> `package` permet de définir le package de la classe
+</script></section><section data-markdown><script type="text/template">
+## Packages
+### Structure
+
+- Les packages sont définis par un **nom de domaine inversé**
+- Il convient d'organiser ses packages en début de projet
+- Il est possible de créer des sous-packages
+</script></section><section data-markdown><script type="text/template">
+## Packages
+### Structure
+
+```shell
+└───src
+    ├───main
+    │   ├───java
+    │   │   └───fr
+    │   │       └───octocorn
+    │   │           └───cours
+    │   │               └───java
+    │   │                   └───Personne.java
+    │   │
+    │   └───resources
+    └───test
+```
+
+> `fr.octocorn.cours.java` est le package de la classe `Personne`
+</script></section><section data-markdown><script type="text/template">
+## Packages
+### Bonnes pratiques
+
+- Un package par **thème** ou par **fonctionnalité**
+- Un package = un dossier !
+- Il est nommé en **minuscules**
+- Il est nommé en **singulier**
+
+> Il n'y a pas de règles strictes, mais il faut rester cohérent !
+</script></section><section data-markdown><script type="text/template">
+## Packages
+### Importer
+
+- Il est possible d'importer un package
+- Il faut pour cela utiliser le mot clé `import` suivi du nom du package
+
+```java
+import fr.octocorn.cours.java.Personne;
+
+public class AnimalDeCompagnie {
+    public Personne maitre;
+}
+```
+
+> `import` permet d'importer un package
+</script></section><section data-markdown><script type="text/template">
+# Demonstration
+</script></section></section><section  data-markdown><script type="text/template">
+# A vous de jouer !
+
+Réalisez le TP 1 !
+
+<aside class="notes"><p><code>exercices/tp1/tp1.coq.md</code></p>
+</aside></script></section></div>
     </div>
 
     <script src="./dist/reveal.js"></script>
