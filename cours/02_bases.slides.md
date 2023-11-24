@@ -1440,6 +1440,10 @@ Pour créer une `HashMap` :
 Map<String, String> map = new HashMap<>();
 ```
 
+- `HashMap` est une implémentation de `Map`
+- `Map` est une interface générique
+- `Map<TypeClef, TypeValeur>`
+
 ----
 
 ## HashMap
