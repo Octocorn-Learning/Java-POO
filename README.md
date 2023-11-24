@@ -33,6 +33,7 @@ Nous aborderons ensuite la POO en tant que telle en commençant par les piliers.
     - Les fonctions
     - Classes et objets
     - Exceptions
+    - HashMap
 - [ ] [Encapsulation](./cours/03_encapsulation.slides.md)
     - Définition
     - Les accesseurs
