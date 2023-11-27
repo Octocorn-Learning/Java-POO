@@ -42,8 +42,8 @@ Nous aborderons ensuite la POO en tant que telle en commençant par les piliers.
     - Les attributs
 - [ ] [Héritage](./cours/04_heritage.slides.md)
     - Définition
-    - Les Superclasses
-    - Les Sous-classes
+    - Les Superclasses & Les Sous-classes
+    - Override & Overload
 - [ ] [Abstraction](./cours/05_abstraction.slides.md)
     - Définition
     - Les classes concrêtes
@@ -52,8 +52,6 @@ Nous aborderons ensuite la POO en tant que telle en commençant par les piliers.
 - [ ] [Polymorphisme](./cours/06_polymorphisme.slides.md)
     - Définition
     - Utilisation
-    - Override
-    - Overload
 
 ## Suivre ce cours 📚
 
