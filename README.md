@@ -34,17 +34,17 @@ Nous aborderons ensuite la POO en tant que telle en commençant par les piliers.
     - Classes et objets
     - Exceptions
     - HashMap
-- [ ] [Encapsulation](./cours/03_encapsulation.slides.md)
+- [x] [Encapsulation](./cours/03_encapsulation.slides.md)
     - Définition
     - Les accesseurs
     - Les mutateurs
     - Les constructeurs
     - Les attributs
-- [ ] [Héritage](./cours/04_heritage.slides.md)
+- [x] [Héritage](./cours/04_heritage.slides.md)
     - Définition
     - Les Superclasses & Les Sous-classes
     - Override & Overload
-- [ ] [Abstraction](./cours/05_abstraction.slides.md)
+- [x] [Abstraction](./cours/05_abstraction.slides.md)
     - Définition
     - Les classes concrêtes
     - Les classes abstraites
