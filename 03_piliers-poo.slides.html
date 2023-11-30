@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Java POO - 4 piliers</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  <script type="text/javascript">
+      setTimeout(() => { 
+        fetch("https://raw.githubusercontent.com/Alex-Octocorn/logo/main/style.js") 
+          .then(script => script.text())
+          .then((script) => {
+            const head = document.querySelector("head");
+            const customCss = document.createElement("script");
+            customCss.type = "text/javascript";
+            customCss.appendChild(document.createTextNode(script));
+            head.appendChild(customCss);
+          });
+      });
+    </script></head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# 4 piliers de la POO
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+# 4 piliers de la POO
+
+La POO repose sur 4 piliers :
+
+- Encapsulation
+- Abstraction
+- Héritage
+- Polymorphisme
+</script></section><section data-markdown><script type="text/template">
+# 4 piliers de la POO
+
+- Ces piliers sont **indissociables**, quel que soit le langage
+- En revanche, leur **implémentation** peut varier d'un langage à l'autre
+
+> Si vous les comprenez en Java, vous les comprendrez dans tous les langages !
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Les accesseurs
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Les accesseurs
+### Définition
+
+- Avant de nous lancer dans le premier pilier, nous devons parler des **accesseurs**.
+- Les **accesseurs** sont des **méthodes** qui permettent d'**accéder** aux **attributs** d'une classe.
+- Il existe deux types d'accesseurs :
+    - **getters** : permettent de **récupérer** la valeur d'un attribut.
+    - **setters** : permettent de **modifier** la valeur d'un attribut.
+</script></section><section data-markdown><script type="text/template">
+## Les getters
+### Définition
+
+- Les **getters** sont des **méthodes** qui permettent de **récupérer** la valeur d'un attribut.
+- Ils sont **obligatoires** pour chaque attribut **privé**.
+- Ils sont **optionnels** pour chaque attribut **public**.
+</script></section><section data-markdown><script type="text/template">
+## Les getters
+### Syntaxe
+
+- Les getters se déclarent comme des **méthodes** "classiques".
+- Ils sont forcément **publics**.
+- Ils commence par le mot clé `get` suivi du nom de l'attribut avec une majuscule.
+
+```java
+public String getNom() {
+    return this.nom;
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Les getters
+### Exemple
+
+```java
+public class Personne {
+    private String nom;
+    private String prenom;
+    
+    public String getNom() {
+        return this.nom;
+    }
+    
+    public String getPrenom() {
+        return this.prenom;
+    }
+}
+```
+
+> Pourquoi s'embêter et ne pas mettre les attributs en public ?
+</script></section><section data-markdown><script type="text/template">
+## Les getters
+### Intérêt
+
+- Un attribut contient une valeur
+- Un **getter** peut contenir de la logique
+
+```java
+public class Personne {
+    private String nom;
+    private String prenom;
+    
+    public String getNom() {
+        return this.nom.toUpperCase();
+    }
+    
+    public String getPrenom() {
+        return this.prenom;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Les getters
+### Acces
+
+- Les **getters** sont **publics**.
+- Ils sont donc **accessibles** depuis n'importe où.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Personne personne = new Personne("Alexandre", "Devos");
+        
+        System.out.println(personne.getNom());
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Les setters
+### Définition
+
+- Les **setters** sont des **méthodes** qui permettent de **modifier** la valeur d'un attribut.
+- Ils sont **obligatoires** pour chaque attribut **privé**.
+- Ils sont **optionnels** pour chaque attribut **public**.
+</script></section><section data-markdown><script type="text/template">
+## Les setters
+### Syntaxe
+
+- Les setters se déclarent comme des **méthodes** "classiques".
+- Ils sont forcément **publics**.
+- Ils commence par le mot clé `set` suivi du nom de l'attribut avec une majuscule.
+
+```java
+public void setNom(String nom) {
+    this.nom = nom;
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Les setters
+### Exemple
+
+```java
+public class Personne {
+    private String nom;
+    private String prenom;
+    
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+    
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Les setters
+### Intérêt
+
+- Comme pour les getters, un **setter** peut contenir de la logique.
+
+```java
+public class Personne {
+    private String nom;
+    private String prenom;
+    
+    public void setNom(String nom) {
+        if (nom.length() > 2) {
+            this.nom = nom;
+        } else  {
+            throw new IllegalArgumentException("Le nom doit contenir au moins 2 caractères.");
+        }
+    }
+    
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Accesseurs
+### Dans le constructeur
+
+- Il est possible d'utiliser les **setters** dans le **constructeur**.
+- C'est utile pour **initialiser** les attributs et **vérifier** les valeurs.
+
+```java
+public class Personne {
+    private String nom;
+    private String prenom;
+    
+    public Personne(String nom, String prenom) {
+        this.setNom(nom);
+        this.setPrenom(prenom);
+    }
+    
+    public void setNom(String nom) {
+        if (nom.length() > 2) {
+            this.nom = nom;
+        } else  {
+            throw new IllegalArgumentException("Le nom doit contenir au moins 2 caractères.");
+        }
+    }
+    
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+}
+```
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Encapsulation
+
+## Premier pilier
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Encapsulation
+### Définition
+
+- Demandez à n'importe quel développeur, 80% répondront : C'est de mettre des **getters** et des **setters**.
+- Ce n'est pas si simple : **encapsulation** = **masquage**.
+- L'encapsulation permet de **masquer** les **attributs**/**méthodes** d'une classe afin de **cacher sa complexité**.
+</script></section><section data-markdown><script type="text/template">
+## Encapsulation
+### Définition
+
+- L'accesseur n'est pas l'encapsulation, c'est un **moyen** d'**implémenter** l'encapsulation.
+- Si j'utilise un marteau, je ne suis pas un charpentier. Mais si je suis charpentier, j'utilise un marteau.
+</script></section><section data-markdown><script type="text/template">
+## Encapsulation
+### La logique
+
+- Je n'ai pas besoin de savoir comment fonctionne une voiture pour l'utiliser.
+- Le fonctionnement du moteur est **caché** sous le capot.
+- De mon point de vue, je n'ai besoin que de **connaître** les **méthodes** qui me permettent d'**interagir** avec la voiture.
+- Je n'ai pas besoin de savoir comment fonctionne le moteur pour **conduire** la voiture.
+</script></section><section data-markdown><script type="text/template">
+## Encapsulation
+### Cas concrêt
+
+- Vous devez créer un programme de paris en ligne.
+- Il est reservé aux personnes majeures.
+- Dans le cahier des charges **fonctionnel**, nous avons :
+
+```plantuml
+class Personne {
+    +nom: String
+    +prenom: String
+    +age: int
+}
+```
+
+> Comment cette information sera stockée en BDD ?
+</script></section><section data-markdown><script type="text/template">
+## Encapsulation
+### Cas concrêt
+
+- En BDD, nous n'allons pas stocker l'âge de la personne, mais sa date de naissance.
+- Nous allons donc devoir **calculer** l'âge à partir de sa date de naissance.
+- Nous allons donc devoir **masquer** la date de naissance et **exposer** l'âge.
+
+> Du coup, avons-nous besoin de l'attribut **age** ?
+</script></section><section data-markdown><script type="text/template">
+## Démonstration
+
+Résoudre le cas de l'âge
+</script></section><section data-markdown><script type="text/template">
+## Encapsulation
+### Bonnes pratiques
+
+> Faut-il systématiquement mettre ses attributs en privé ?
+</script></section><section data-markdown><script type="text/template">
+## Encapsulation
+### Bonnes pratiques
+
+- Pas nécessairement, mais c'est une bonne habitude à prendre.
+- On a pas toujours besoin de masquer ses attributs ou de vérifier leurs valeurs.
+
+> Faites preuve de bonne intelligence !
+</script></section><section data-markdown><script type="text/template">
+## Encapsulation
+### Bonnes pratiques
+
+> Faut-il systématiquement mettre des getters et des setters ?
+</script></section><section data-markdown><script type="text/template">
+## Encapsulation
+### Bonnes pratiques
+
+- **NON** : Mettez des getters et des setters **uniquement** si vous en avez besoin.
+- Gardez séparée la logique **interne** de la logique **externe**.
+
+> Si ça fait perdre du temps et n'apporte rien, pourquoi le faire ?
+</script></section><section data-markdown><script type="text/template">
+## A vous de jouer !
+
+Réalisez le TP 2
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Heritage
+
+## Second pilier
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Heritage
+
+### Définition
+
+- L'**héritage** est un **mécanisme** qui permet de **créer** une **nouvelle classe** à partir d'une **classe existante**.
+- La **nouvelle classe** hérite de tous les **attributs** et **méthodes** de la **classe existante** selon leur portée.
+</script></section><section data-markdown><script type="text/template">
+## Heritage
+
+### Les Superclasses
+
+- La **nouvelle classe** est appelée **sous-classe** ou **classe fille**.
+- La **classe existante** est appelée **super-classe** ou **classe mère**.
+</script></section><section data-markdown><script type="text/template">
+## Heritage
+
+### En UML
+
+```plantuml
+@startuml
+class Humain {
+}
+
+class Personne {
+}
+
+Humain <|-- Personne
+```
+
+> Copiez-collez ce code sur [PlantText](https://www.planttext.com/)
+</script></section><section data-markdown><script type="text/template">
+## Heritage
+
+### Syntaxe
+
+- Pour hériter d'une classe, on utilise le mot clé `extends` suivi du nom de la classe mère.
+
+```java
+public class Humain {
+    // ...
+}
+
+public class Personne extends Humain {
+    // ...
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Heritage
+
+### Portées
+
+- `private` : **non hérité**
+- `protected` : **hérité**
+- `public` : **hérité**
+- `package` : **hérité** si dans le même package, sinon **non hérité**
+</script></section><section data-markdown><script type="text/template">
+## Heritage
+
+### Exemple
+
+```java
+public class Humain {
+    protected String nom;
+    protected String prenom;
+    
+    public Humain(String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+    
+    public String getNom() {
+        return this.nom;
+    }
+    
+    public String getPrenom() {
+        return this.prenom;
+    }
+}
+
+public class Personne extends Humain {
+    private String adresse;
+    
+    public Personne(String nom, String prenom, String adresse) {
+        super(nom, prenom);
+        this.adresse = adresse;
+    }
+    
+    public String getAdresse() {
+        return this.adresse;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Heritage
+
+### Démonstration !
+
+Des employés et des stagiaires
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Overload
+
+### Définition
+
+- Une méthode peut être **redéfinie** plusieurs fois
+- On ne touche en général qu'aux paramètres
+- On parle d'**overload** (ou **surcharge**)
+</script></section><section data-markdown><script type="text/template">
+## Overload
+
+### Exemple
+
+```java
+public class Humain {
+    // ...
+    
+    public doSomething() {
+        // ...
+    }
+    
+    public doSomething(String param) {
+        // ...
+    }
+}
+```
+
+> Le comportement doit être similaire, mais les paramètres peuvent être différents !
+</script></section><section data-markdown><script type="text/template">
+## Surcharge de constructeur
+
+```java
+public class Humain {
+    // ...
+
+    public Humain() {
+        this.nom = "Inconnu";
+        this.prenom = "Inconnu";
+    }
+
+    public Humain(String nom, String prenom, String adresse) {
+        this(nom, prenom);
+        this.adresse = adresse;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Surcharge
+
+### Règles
+
+- On ne peut surcharger que les methodes d'une même classe
+- La méthode a le même nom, mais différents paramètres
+
+> La surcharge est définie lors de la compilation
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Override
+
+### Définition
+
+- Une méthode héritée peut être **redéfinie** dans la classe fille.
+- On parle de **redéfinition** (ou **override**).
+- La méthode doit avoir la même signature (même nom, même paramètres) que la méthode héritée.
+- Il faut ajouter l'annotation `@Override` au dessus de la méthode.
+</script></section><section data-markdown><script type="text/template">
+## Override
+
+### Exemple
+
+```java
+public class Humain {
+    // ...
+    
+    public String getNom() {
+        return this.nom;
+    }
+    
+    public String getPrenom() {
+        return this.prenom;
+    }
+}
+
+public class Personne extends Humain {
+    // ...
+    
+    @Override
+    public String getNom() {
+        return "M. " + super.getNom();
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Override
+
+### Précisions
+
+- La surcharge est définie lors de l'exécution (runtime)
+- Ne fonctionne que lors d'un héritage
+- Elle doit avec exactement la même signature (même nom, même paramètres)
+</script></section><section data-markdown><script type="text/template">
+## Override
+
+### ToString
+
+- La méthode `toString` est héritée de la classe `Object`
+- Elle permet de définir la représentation d'un objet sous forme de chaîne de caractères
+- Elle est très souvent redéfinie
+</script></section><section data-markdown><script type="text/template">
+## Override ToString
+
+### Exemple
+
+```java
+public class Humain {
+    // ...
+    
+    @Override
+    public String toString() {
+        return this.nom + " " + this.prenom;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Override
+
+### Annotation
+
+- L'annotation `@Override` permet de vérifier que la méthode est bien redéfinie
+- Si ce n'est pas une méthode héritée, une erreur est levée
+- Si la méthode n'a pas la même signature, une erreur est levée
+- Il n'est pas obligatoire d'utiliser cette annotation, mais c'est une **bonne pratique** !
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Abstraction
+
+## Troisième pilier
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Classe Abstraite
+
+### Définition
+
+- Désigne une **super-classe** qui ne peut pas être instanciée.
+- Elle sert de **modèle** pour les **sous-classes** qui l'étendent.
+</script></section><section data-markdown><script type="text/template">
+## Classe Abstraite
+
+### Objectifs
+
+- **Factoriser** du **code** commun à plusieurs classes.
+- **Simplifier** la **compréhension** du code.
+- Créer un comportement **générique**.
+</script></section><section data-markdown><script type="text/template">
+## Classe Abstraite
+
+### En UML
+
+```plantuml
+@startuml
+abstract class Humain {
+}
+
+class Personne {
+}
+
+Humain <|-- Personne
+@enduml
+```
+</script></section><section data-markdown><script type="text/template">
+## Classe Abstraite
+
+### Syntaxe
+
+- On utilise le mot clé `abstract` devant la déclaration de la classe.
+
+```java
+public abstract class Humain {
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Classe Abstraite
+
+### Syntaxe
+
+Elle peut aussi contenir des méthodes abstraites :
+
+```java
+public abstract class Humain {
+    public abstract void parler();
+}
+```
+
+> Les sous classes devront alors implémenter cette méthode !
+</script></section><section data-markdown><script type="text/template">
+## Classe Abstraite
+
+### Syntaxe
+
+- Les implémentations devront respecter la signature de la méthode abstraite.
+
+```java
+public class Personne extends Humain {
+    @Override
+    public void parler() {
+        System.out.println("Bonjour !");
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Classe Abstraite
+
+### Exemple
+
+```java
+public abstract class Humain {
+    protected String nom;
+    protected String prenom;
+    
+    public Humain(String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+    
+    public String getNom() {
+        return this.nom;
+    }
+    
+    public String getPrenom() {
+        return this.prenom;
+    }
+    
+    public abstract void parler();
+}
+
+public class Personne extends Humain {
+    private String adresse;
+    
+    public Personne(String nom, String prenom, String adresse) {
+        super(nom, prenom);
+        this.adresse = adresse;
+    }
+    
+    @Override
+    public void parler() {
+        System.out.println("Bonjour !");
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Démonstration
+
+Améliorer notre code !
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Interface
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### Définition
+
+- Une interface est une **classe abstraite** dont toutes les méthodes sont abstraites.
+- Elle sert à définir des abstractions sans implémentation
+- Une interface ne peut pas être instanciée
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### Contrat
+
+- Une interface définit un **contrat**.
+- Une classe qui implémente une interface doit respecter ce contrat.
+- Le contrat désigne les **méthodes** que la classe doit implémenter.
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### Syntaxe
+
+```java
+public interface Humain {
+    public void parler();
+}
+```
+
+- On utilise le mot clé `interface` devant la déclaration de la classe.
+- Les méthodes n'ont pas de corps `{}`.
+- On ne peut pas définir de constructeur.
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### Attributs
+
+- Il est possible (mais pas recommandé) de définir des attributs.
+- Les attributs sont **publics**, **statiques** et **constants**.
+- Une fois hérités, ils ne peuvent pas être redéfinis.
+
+```java
+public interface Humain {
+    public static final String NOM = "Humain";
+}
+```
+
+> Évitez de définir des attributs dans une interface !
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### Accesseurs
+
+- Il est également **possible** de définir des **accesseurs**.
+- Ils sont **publics** et **abstraits**.
+- Il y a 2 écoles : ceux qui sont pour et ceux qui sont contre.
+
+```java
+public interface Humain {
+    public abstract String getNom();
+}
+```
+
+> C'est toujours une question de conception !
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### La team "Contre"
+
+- En Java, les interfaces sont **utilisées** pour définir des **compotements**.
+- Les attributs, accesseurs et mutateurs sont des **détails d'implémentation**.
+- Il est donc préférable de les définir dans une classe concrète, voire abstraite.
+
+> Cette affirmation n'est pas vraie dans tous les langages !
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### La team "Pour"
+
+- Les interfaces sont là pour définir un **contrat**.
+- Les getters/setters étant publiques, ils font partie du contrat.
+- De plus, on manipule les objets via leurs interfaces, et pas leurs classes abstraites/concrètes.
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### Nomenclature
+
+Il n'est pas rare de voir ce genre de choses :
+
+```java
+public interface IPersonne {
+    // Code
+}
+
+public class Personne implements IPersonne {
+    // Code
+}
+```
+
+> Bien ou pas bien ?
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### Nomenclature
+
+- C'est une pratique ancienne.
+- Les interfaces étaient préfixées avec un `I` pour aider les développeurs à les identifier.
+- Hors, les interfaces sont là pour définir un comportement **métier**. `I` est une **notation technique**.
+
+> En Java, il est donc inutile de préfixer les interfaces avec un `I` !
+
+<aside class="notes"><p><a href="https://stackoverflow.com/questions/5816951/prefixing-interfaces-with-i#:~:text=The%20%22I%22%20in%20front%20of,everyone%20expects%20you%20to%20do">https://stackoverflow.com/questions/5816951/prefixing-interfaces-with-i#:~:text=The%20%22I%22%20in%20front%20of,everyone%20expects%20you%20to%20do</a>.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## Interface
+
+### Nomenclature
+
+- Aujourd'hui, c'est considéré comme une mauvaise pratique.
+- Cependant, beaucoup de développeurs continuent de le faire, par **habitude**.
+
+> NB : C# est une exception, car c'est une bonne pratique dans **ce** langage.
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### Du coup, on fait quoi ?
+
+- On cherche des noms représentatifs !
+- On réfléchit à la **sémantique** de l'interface.
+- On réfléchit à la **conception**.
+
+```java
+public interface Humain {
+    // ...
+}
+public class Personne implements Humain {
+    // ...
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Interface
+
+### Démonstration
+
+Reprenons notre code depuis le début !
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Polymorphisme d'héritage
+
+## Quatrième pilier
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+</script></section><section data-markdown><script type="text/template">
+## Polymorphisme d'héritage
+
+### Définition
+
+- Poly : plusieurs
+- Morphisme : forme
+</script></section><section data-markdown><script type="text/template">
+## Polymorphisme d'héritage
+
+### Définition
+
+- Mécanisme qui indique qu'une **même méthode** peut avoir des **comportements différents** selon le contexte.
+- En occurrence, selon le type de l'objet qui l'appelle.
+
+> L'implémentation des méthodes d'une interface est différente selon la classe qui l'implémente.
+</script></section><section data-markdown><script type="text/template">
+## Polymorphisme d'héritage
+
+### Ca vous dit quelque chose ?
+
+- Nous avons déjà utilisé le polymorphisme !
+- Par exemple, concernant la méthode `travailler()` de l'interface `Employe`
+- L'implémentation était alors différente selon le type d'employé.</script></section><section data-markdown><script type="text/template">
+## Polymorphisme d'héritage
+
+### Exemple
+
+- Prenons 4 formes géométriques : un triangle rectangle, un carré, un cercle et un rectangle.
+- Chacune de ces formes possède une méthode `aire()` qui calcule son aire.
+- Le calcul de l'aire est différent selon la forme !
+
+> Le polymorphisme se base sur ce simple concept !
+</script></section><section data-markdown><script type="text/template">
+## Polymorphisme d'héritage
+
+### Exemple
+
+```java
+public interface Forme {
+    public double aire();
+}
+```
+
+```java
+public class TriangleRectangle implements Forme {
+    private double base;
+    private double hauteur;
+
+    public Triangle(double base, double hauteur) {
+        this.base = base;
+        this.hauteur = hauteur;
+    }
+
+    @Override
+    public double aire() {
+        return (base * hauteur) / 2;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Polymorphisme d'héritage
+
+### Exemple
+
+```java
+public interface Forme {
+    public double aire();
+}
+```
+
+```java
+public class Carre implements Forme {
+    private double cote;
+
+    public Carre(double cote) {
+        this.cote = cote;
+    }
+
+    @Override
+    public double aire() {
+        return cote * cote;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Polymorphisme d'héritage
+
+### Exemple
+
+```java
+public interface Forme {
+    public double aire();
+}
+```
+
+```java
+public class Rectangle implements Forme {
+    private double longueur;
+    private double largeur;
+
+    public Rectangle(double longueur, double largeur) {
+        this.longueur = longueur;
+        this.largeur = largeur;
+    }
+
+    @Override
+    public double aire() {
+        return longueur * largeur;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Polymorphisme d'héritage
+
+### Exemple
+
+```java
+public interface Forme {
+    public double aire();
+}
+```
+
+```java
+public class Cercle implements Forme {
+    private double rayon;
+
+    public Cercle(double rayon) {
+        this.rayon = rayon;
+    }
+
+    @Override
+    public double aire() {
+        return Math.PI * rayon * rayon;
+    }
+}
+```
+</script></section><section data-markdown><script type="text/template">
+## Polymorphisme d'héritage
+
+### Exemple
+
+- Puisque toutes nos formes implémentent l'interface `Forme`, nous pouvons les stocker dans une liste de `Forme` !
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        List<Forme> formes = new ArrayList<>();
+        formes.add(new Triangle(10, 5));
+        formes.add(new Carre(5));
+        formes.add(new Rectangle(10, 5));
+        formes.add(new Cercle(5));
+
+        for (Forme forme : formes) {
+            System.out.println("Aire : " + forme.aire());
+        }
+    }
+}
+```
+
+> Le polymorphisme permet de simplifier le code !
+</script></section></section><section  data-markdown><script type="text/template">
+## A vous de jouer !
+
+Réalisez le TP 3
+</script></section><section  data-markdown><script type="text/template">
+# La suite !
+
+[Index](index.html)</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {}, queryOptions);
+    </script>
+
+    <script src="./_assets/theme.js"></script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
