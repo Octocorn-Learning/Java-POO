@@ -9,6 +9,143 @@ sources:
   - 
 ---
 
+# Bonnes pratiques
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+
+----
+
+## Bonnes pratiques
+
+### Introduction
+
+- N'oubliez pas que vous ne codez pas pour vous, mais pour un **client**
+- Vous ne codez pas seul, mais **en équipe** !
+- Il faut donc que votre code soit compréhensible par tous
+
+> Partez du principe que votre lecteur aura 3 de QI et 2 de tension !
+
+----
+
+## Bonnes pratiques
+
+### Le métier de Dev
+
+Quel est le métier d'un développeur ? Taper du code ?
+
+----
+
+## Bonnes pratiques
+
+### Le métier de Dev
+
+- Votre métier est de **trouver des solutions** pour **répondre à un besoin**
+- Taper du code n'est qu'un moyen d'y arriver !
+
+----
+
+## Bonnes pratiques
+
+### Un bon développeur
+
+- **Tout le monde peut taper du code**
+- Mais un bon développeur sait **bien** taper du code
+
+> Vous savez nager, ou avancer dans l'eau ?
+
+----
+
+## Bonnes pratiques
+
+### Analogie du conducteur : Le pilote
+
+Une personne capable de conduire une voiture à 200km/h sans accident est-elle un bon conducteur ?
+
+----
+
+## Bonnes pratiques
+
+### Analogie du conducteur : Le probe
+
+Une personne qui respecte les limitations de vitesse, mets ses clignotants, ne téléphone pas au volant... Est-elle un bon conducteur ?
+
+> Probe = Personne qui respecte les règles
+
+----
+
+## Bonnes pratiques
+
+### Analogie du conducteur
+
+Ce qui est sûr avec le pilote :
+- Je ne voudrais pas monter dans sa voiture
+- Je ne voudrais pas partager la route avec lui
+
+> C'est un **joueur solo**
+
+----
+
+## Bonnes pratiques
+
+### Le pilote dans le dev
+
+- Il code vite, mais seul
+- Difficile de comprendre son code
+- Ça sort vite... au début !
+- À terme, le code devient illisible, incompréhensible, et inutilisable
+
+> Le pilote est un **mauvais** développeur
+
+----
+
+## Bonnes pratiques
+
+### Le pilote dans le dev
+
+- Peu importe ses compétences techniques
+- Peu importe son expérience
+- Il est un **mauvais** développeur
+
+> Parfois appelé "Pisseur de code"
+
+----
+
+## Bonnes pratiques
+
+### La légende de Microsoft
+
+- On raconte que les développeurs de Microsoft tapent en moyenne 10 lignes de code par jour
+- Le reste du temps est consacré à la réflexion, la conception, la documentation, les tests, etc...
+
+> Ne foncez pas sans réfléchir !
+
+----
+
+## Bonnes pratiques
+
+### Ne confondez pas
+
+- Technique et qualitatif
+- Vitesse et qualité
+
+> Il faut savoir prendre son temps !
+
+----
+
+## Bonnes pratiques
+
+### Quelques rappels
+
+- Une fonction < 25 lignes
+- Une fonction = 1 action
+- Des noms de variables et fonctions **explicites**
+- Des commentaires **pertinents** et une documentation **complète**
+- Des **tests unitaires**, autant que possible !
+
+---
+
 # KISS
 
 ![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
@@ -79,6 +216,8 @@ Selon les versions :
 - Le code est lu par des humains, qui ne sont pas vous
 - Dans un mois, vous aurez oublié ce que vous avez fait !
 - Pensez à la documentation et l'auto-documentation
+
+> Résolvez un problème complexe avec pleins de solutions simples !
 
 ----
 

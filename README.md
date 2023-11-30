@@ -14,7 +14,8 @@ Nous aborderons les différents concepts, les bonnes pratiques de développement
 Nous commencerons par aborder la syntaxe java, puis nous verrons certains usages plus poussés du langage.
 Nous aborderons ensuite la POO en tant que telle en commençant par les piliers.
 
-> Si vous connaissez déjà la syntaxe Java et souhaitez passer directement à la POO, vous pouvez vous rendre directement au chapitre sur [l'encapsulation](./cours/03_encapsulation.slides.md).
+> Si vous connaissez déjà la syntaxe Java et souhaitez passer directement à la POO, vous pouvez vous rendre directement
+> au chapitre sur [les piliers de la POO](./cours/03_piliers-poo.slides.md).
 
 ## Plan de cours 🗺️
 
@@ -34,30 +35,35 @@ Nous aborderons ensuite la POO en tant que telle en commençant par les piliers.
     - Classes et objets
     - Exceptions
     - HashMap
-- [x] [Encapsulation](./cours/03_encapsulation.slides.md)
-    - Définition
-    - Les accesseurs
-    - Les mutateurs
-    - Les constructeurs
-    - Les attributs
-- [x] [Héritage](./cours/04_heritage.slides.md)
-    - Définition
-    - Les Superclasses & Les Sous-classes
-    - Override & Overload
-- [x] [Abstraction](./cours/05_abstraction.slides.md)
-    - Définition
-    - Les classes concrêtes
-    - Les classes abstraites
-    - Les interfaces
-- [ ] [Polymorphisme](./cours/06_polymorphisme.slides.md)
-    - Définition
-    - Utilisation
+- [x] [Les 4 piliers](./cours/03_piliers-poo.slides.md)
+    - Accesseurs/mutateurs
+    - Encapsulation
+    - Héritage
+    - Polymorphisme
+    - Abstraction
+- [x] [Bonnes pratiques](./cours/04_bonnes-pratiques.slides.md)
+    - KISS
+    - DRY
+    - YAGNI
+    - SOLID
+- [ ] [Design Patterns](./cours/05_design-patterns.slides.md)
+    - Singleton
+    - Factory
+    - Builder
+    - Adapter
+    - Bridge
+    - Observer
+    - Strategy
+    - Template Method
+    - Chain of Responsibility
+    - Command
 
 ## Suivre ce cours 📚
 
 ### En autonomie 🚀
 
-Le cours est Open Source, vous pouvez donc le suivre en autonomie en vous rendant sur la page [GitHub]() du cours.  
+Le cours est Open Source, vous pouvez donc le suivre en autonomie en vous rendant sur la
+page [GitHub](https://octocorn-learning.github.io/Java-POO/#/) du cours.  
 Vous pouvez bénéficier des explications et des exercices. Enjoy ! ❤️
 
 ### En présentiel/distanciel 🎓
