@@ -1,0 +1,19 @@
+---
+title: Java Avancé
+theme: solarized
+author: Alexandre Devos
+company: Octocorn
+contributors: 
+  - Alexandre Devos
+sources:
+  - 
+---
+
+# Java Avancé
+
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+
+----

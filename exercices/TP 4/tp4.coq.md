@@ -51,11 +51,6 @@ Feature: Kalax
     Then je ne peux pas avoir une kalax à 10 box
 ```
 
-#### Aides 💡
-
-- On peut voir ici qu'il existe plusieurs types de kalax (4, 6 ou 8 box). Comment peut-on représenter cela ?
-- Demandez-vous ce qu'il se passera si IKEA décide de créer une kalax à 10 box ? Comment faire en sorte que votre code soit évolutif ?
-
 ## US 2 📖
 
 ```gherkin
@@ -77,10 +72,6 @@ Feature: Kalax
     When Je souhaite une Kalax de couleur bois
     Then la kalax est bois
 ```
-
-#### Aides 💡
-
-- On comprend ici que la couleur est un attribut de la kalax. Comment peut-on représenter cela ?
 
 ## US 3 📖
 
@@ -121,12 +112,6 @@ Feature: Box de kalax
   | caisse    | vêtement |
 ```
 
-#### Aides 💡
-
-- Une Kalax peut recevoir plusieurs types de composants. Comment peut-on représenter cela ?
-- Réfléchissez à ce qui est communs entre les composants.
-- Rappelez-vous des différents types de relation entre les classes.
-
 ## US 4 📖
 
 ```gherkin
@@ -153,12 +138,6 @@ Feature: Box de kalax
         Then je ne peux pas placer la statue de licorne dans la box
 ```
 
-### Aides
-
-- Comment représenter le fait qu'une box peut contenir plusieurs objets ?
-- Comment différencier un box avec et sans composant ?
-- Dans le code, que doit-il se passer si je souhaite ajouter un objet dans une box qui contient déjà un composant ?
-
 ## US 5 📖
 
 ```gherkin
@@ -174,8 +153,3 @@ Feature: Contenu Box
       When je consulte le contenu de la boxe
       Then je vois le contenu de la caisse
 ```
-
-### Aides 💡
-
-- Comment gérer les différents types de contenu d'une box ?
-- Comment réfléchir aux différentes méthodes, et surtout à leur type de retour ?

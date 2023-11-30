@@ -26,8 +26,6 @@ Du Gherkin est également disponible pour vous aider à comprendre les comportem
 
 Utilisez les exemples donnés dans vos tests (classe `Main`) ou si vous le souhaitez, dans vos tests unitaires.
 
-> Il faudra donc créer les classes qui vont avec les objets ! 😉
-
 ### US 1 📖
 
 ```gherkin
@@ -53,8 +51,8 @@ Feature: Kalax
 
 #### Aides 💡
 
-- On peut voir ici qu'il existe plusieurs types de kalax (4, 6 ou 8 box). Comment peut-on représenter cela ?
-- Demandez-vous ce qu'il se passera si IKEA décide de créer une kalax à 10 box ? Comment faire en sorte que votre code soit évolutif ?
+- Demandez-vous ce qu'il se passera si IKEA décide de créer une kalax à 10 box ? 
+- Comment faire en sorte que votre code soit évolutif ?
 
 ## US 2 📖
 
@@ -123,7 +121,6 @@ Feature: Box de kalax
 
 #### Aides 💡
 
-- Une Kalax peut recevoir plusieurs types de composants. Comment peut-on représenter cela ?
 - Réfléchissez à ce qui est communs entre les composants.
 - Rappelez-vous des différents types de relation entre les classes.
 
@@ -153,11 +150,9 @@ Feature: Box de kalax
         Then je ne peux pas placer la statue de licorne dans la box
 ```
 
-### Aides
+### Aides 💡
 
-- Comment représenter le fait qu'une box peut contenir plusieurs objets ?
 - Comment différencier un box avec et sans composant ?
-- Dans le code, que doit-il se passer si je souhaite ajouter un objet dans une box qui contient déjà un composant ?
 
 ## US 5 📖
 
@@ -177,5 +172,4 @@ Feature: Contenu Box
 
 ### Aides 💡
 
-- Comment gérer les différents types de contenu d'une box ?
 - Comment réfléchir aux différentes méthodes, et surtout à leur type de retour ?
