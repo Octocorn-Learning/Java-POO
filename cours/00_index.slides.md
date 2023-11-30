@@ -12,5 +12,6 @@ contributors:
 - [Introduction](01_introduction.slides.html)
 - [Bases](02_bases.slides.html)
 - [Les 4 piliers de la POO](03_piliers-poo.slides.html)
+- [Bonnes pratiques](04_bonnes-pratiques.slides.html)
 
 > ⚠️ Ce cours est en cours de rédaction, il est donc incomplet ⚠️

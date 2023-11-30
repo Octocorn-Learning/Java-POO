@@ -1415,3 +1415,9 @@ On inverse la réflexion :
 # À vous de jouer !
 
 Création d'un meuble SOLID
+
+---
+
+# La suite !
+
+[Index](index.html)

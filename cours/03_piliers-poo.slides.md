@@ -1139,3 +1139,9 @@ public class Main {
 ## A vous de jouer !
 
 Réalisez le TP 3
+
+---
+
+# La suite !
+
+[Index](index.html)
