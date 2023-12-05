@@ -51,12 +51,7 @@ Nous aborderons ensuite la POO en tant que telle en commençant par les piliers.
     - Factory
     - Builder
     - Adapter
-    - Bridge
-    - Observer
-    - Strategy
-    - Template Method
-    - Chain of Responsibility
-    - Command
+    - Decorator
 
 ## Suivre ce cours 📚
 
