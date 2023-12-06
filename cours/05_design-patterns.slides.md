@@ -54,7 +54,7 @@ sources:
 ### The GoF Boof
 
 - Ils traitent 23 cas communs de développement et proposent une solution pour chacun
-- Concernent initialement le C++, mais peut être appliqué à tous les langages orientés objet
+- Concernent le C++, mais applicables à tous les langages orientés objet
 - Ils mettent un nom sur ces usages, et les classent en 3 catégories :
     - Création
     - Structure
@@ -135,7 +135,7 @@ sources:
 ### Dans ce cours
 
 - Nous n'aborderons pas tous les design patterns dans ce cours
-- Nous nous concentrerons sur une dizaine de design patterns les plus courants
+- Nous nous concentrerons sur les plus courants
 
 ----
 
@@ -896,7 +896,7 @@ Données attendues :
 
 # Design patterns
 
-## Decorator
+## Proxy
 
 ![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
 
@@ -904,4 +904,133 @@ Données attendues :
 
 ----
 
-> En cours de rédaction
+## Proxy
+
+### Définition
+
+- Le proxy est un design pattern de type *structure*
+- Il permet de contrôler l'accès à un objet
+- Il peut être utilisé pour des raisons de sécurité, de performance, de simplicité, etc.
+
+----
+
+## Proxy
+
+### Analogie
+
+![Analogie Proxy](assets/proxy-analogie.png) <!-- .element width="40%" -->
+
+- Une carte de crédit est un proxy pour votre compte en banque
+- Il permet de réaliser les mêmes opérations que de l'argent liquide
+- Sécurité : vous n'avez pas à transporter de l'argent liquide
+
+----
+
+## Proxy
+
+### Structure
+
+![Proxy Structure](assets/proxy-structure.png)
+
+----
+
+## Proxy
+
+### Cas concret : Retail
+
+- Vous créez un site d'e-commerce
+- Votre app fait un appel à une base de données pour récupérer les promos de la journée
+- La requête est complexe, sans jointures et met 5 à 10 secondes à s'exécuter
+
+> La promo restera la même toute la journée ! Pourquoi tout refaire à chaque fois ?
+
+----
+
+## Proxy
+
+### Cas concret : Retail
+
+1. Création de l'interface `PromoServiceLib` qui contient la méthode `getPromo()`
+2. Création de la classe `PromoService` qui implémente l'interface et contient la logique de récupération des promos
+3. Création de la classe `PromoServiceProxy` qui implémente l'interface et contient la logique de cache
+4. Utilisation du `PromoServiceProxy` dans l'application
+
+----
+
+## Proxy
+
+### Cas concret : Retail
+
+Représentation UML de la solution
+
+![Exemple Retail UML Proxy](assets/proxy-exemple-uml.png)
+
+> Représentation simpliste
+
+Note: IRL, ProductService serait plugué à d'autres interfaces pour effectuer d'autres opérations !
+
+----
+
+## Proxy
+
+### Démonstration !
+
+Résolvons le cas concret du Retail !
+
+----
+
+## Proxy
+
+### À vous de jouer !
+
+Réalisez le TP 6 sur le Proxy !
+
+---
+
+# Design patterns
+
+## Conclusion
+
+![Logo Java](./assets/java.png) <!-- .element width="20%" align="left" -->
+
+![IntelliJ](assets/intellij.png) <!-- .element width="30%" align="right" -->
+
+----
+
+## Conclusion
+
+> Faut-il toujours utiliser les design patterns ?
+
+----
+
+## Conclusion
+
+- Oui ... et non !
+- Évitez de les utiliser à tout prix (over-engineering)
+- Utilisez-les **uniquement** s'ils représentent la meilleure solution à votre problème !
+- N'anticipez "pas trop" ! (YAGNI)
+
+> Et surtout : réfléchissez avant de coder ! ❤️
+
+----
+
+## Conclusion
+
+### Design patters et frameworks
+
+- La majorité des frameworks utilisent des design patterns
+- Si bien qu'on a pas à s'en soucier !
+- Les connaitre vous aidera à mieux comprendre la machinerie interne !
+
+----
+
+## Conclusion
+
+### Le dark side des design patterns
+
+- Souvent, un design pattern complexifie le code (KISS ?)
+- Il peut être difficile de s'en débarrasser une fois installé
+- Pour un neophyte, il peut être difficile de comprendre le code !
+
+> Utilisez-les avec parcimonie !
+

@@ -51,7 +51,7 @@ Nous aborderons ensuite la POO en tant que telle en commençant par les piliers.
     - Factory
     - Builder
     - Adapter
-    - Decorator
+    - Proxy
 
 ## Suivre ce cours 📚
 
